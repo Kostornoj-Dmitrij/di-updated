@@ -4,8 +4,9 @@ public class CircularLayoutProperties
 {
     public double AngleIncreasingStep { get; }
     public int RadiusIncreasingStep { get; }
+    public const double OneDegree = Math.PI / 180;
 
-    public CircularLayoutProperties(double angleIncreasingStep = Math.PI / 180, int radiusIncreasingStep = 1)
+    public CircularLayoutProperties(double angleIncreasingStep = OneDegree, int radiusIncreasingStep = 1)
     {
         AngleIncreasingStep = angleIncreasingStep;
         RadiusIncreasingStep = radiusIncreasingStep;
