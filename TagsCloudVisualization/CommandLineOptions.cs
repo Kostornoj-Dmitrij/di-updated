@@ -1,7 +1,7 @@
 using CommandLine;
 using TagsCloudVisualization.Properties;
 
-namespace TagsCloud;
+namespace TagsCloudVisualization;
 
 public class CommandLineOptions
 {
