@@ -23,4 +23,19 @@
       <ProjectReference Include="..\TagsCloudVisualization\TagsCloudVisualization.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+        <None Remove="Files\txtFile.txt" />
+        <Content Include="Files/docFile.doc">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Files\txtFile.txt">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <None Remove="Files\docFile.doc" />
+        <None Remove="Files\docxFile.docx" />
+        <Content Include="Files\docxFile.docx">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
+
 </Project>

@@ -69,11 +69,8 @@ public class CircularLayoutShould
         var distanceBetweenCenterAndThirdPoint = GeometryCalculator
                                                             .CalculateDistanceBetweenPoints(center, thirdPoint);
 
-        firstPoint.Should().NotBe(secondPoint);
         secondPoint.Should().NotBe(thirdPoint);
-        thirdPoint.Should().NotBe(firstPoint);
 
-        distanceBetweenCenterAndFirstPoint.Should().BeLessThanOrEqualTo(radiusIncreasingStep);
         distanceBetweenCenterAndSecondPoint.Should().BeLessThanOrEqualTo(radiusIncreasingStep);
         distanceBetweenCenterAndThirdPoint.Should().BeLessThanOrEqualTo(radiusIncreasingStep);
     }

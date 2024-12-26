@@ -4,6 +4,7 @@ using TagsCloudVisualization.Readers;
 
 namespace TagsCloudVisualizationTests;
 
+[TestFixture]
 public class ReadersShould
 {
     [Test]
