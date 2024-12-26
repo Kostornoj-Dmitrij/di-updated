@@ -11,17 +11,17 @@ public class CircularLayout : ILayout
     private double _circleAngle;
     private double _circleRadius;
 
-    public CircularLayout(CircularLayoutProperties settings)
+    public CircularLayout(CircularLayoutProperties properties)
     {
-        if (settings.AngleIncreasingStep == 0)
+        if (properties.AngleIncreasingStep == 0)
             throw new ArgumentException("AngleIncreasingStep should not be zero");
 
-        if (settings.RadiusIncreasingStep <= 0)
+        if (properties.RadiusIncreasingStep <= 0)
             throw new ArgumentException("RadiusIncreasingStep should be positive");
 
         _center = new Point(0, 0);
-        _radiusIncreasingStep = settings.RadiusIncreasingStep;
-        _angleIncreasingStep = settings.AngleIncreasingStep;
+        _radiusIncreasingStep = properties.RadiusIncreasingStep;
+        _angleIncreasingStep = properties.AngleIncreasingStep;
     }
 
     public Point CalculateNextPoint()
