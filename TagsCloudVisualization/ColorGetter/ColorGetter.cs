@@ -3,7 +3,7 @@ using TagsCloudVisualization.Properties;
 
 namespace TagsCloudVisualization.ColorGetter;
 
-public class ColorGetter
+public class ColorGetter : IColorGetter
 {
     private readonly ColorGetterProperties _colorGetterProperties;
     private readonly Random _random;

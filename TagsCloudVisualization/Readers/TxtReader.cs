@@ -1,6 +1,6 @@
 namespace TagsCloudVisualization.Readers;
 
-public class TxtReader
+public class TxtReader : IReader
 {
     public bool CanRead(string pathToFile)
     {

@@ -1,5 +1,4 @@
 using Autofac;
-using TagsCloud;
 using TagsCloudVisualization.CloudLayouters;
 using TagsCloudVisualization.ColorGetter;
 using TagsCloudVisualization.Handlers;
