@@ -28,7 +28,8 @@ public class ImageDrawer
                 Y = rectangle.Y - minY + borderPadding
             };
 
-            var randomColor = Color.FromArgb(random.Next(255), random.Next(255), random.Next(255));
+            var randomColor = Color.FromArgb(random.Next(255), 
+                random.Next(255), random.Next(255));
             var brush = new SolidBrush(randomColor);
 
             graphics.FillRectangle(brush, movedRectangle);

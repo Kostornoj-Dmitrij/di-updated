@@ -44,7 +44,7 @@ public class TagLayouter : ITagLayouter
             return _tagLayouterProperties.MinSize + (_tagLayouterProperties.MaxSize - _tagLayouterProperties.MinSize)
                 * (wordCount - minWordCount) / (maxWordCount - minWordCount);
         }
-        
+
         return _tagLayouterProperties.MaxSize;
     }
 

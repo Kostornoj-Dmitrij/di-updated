@@ -5,13 +5,13 @@ namespace TagsCloudVisualization.Handlers;
 
 public class TextHandler : ITextHandler
 {
-    private readonly IReader[] _readers = null!;
-    private readonly TextHandlerProperties _properties = null!;
+    private readonly IReader[] _readers;
+    private readonly TextHandlerProperties _properties;
 
-    public TextHandler(IReader[] readers, TextHandlerProperties settings)
+    public TextHandler(IReader[] readers, TextHandlerProperties properties)
     {
-        this._readers = _readers;
-        this._properties = _properties;
+        _readers = readers;
+        _properties = properties;
     }
 
     public Dictionary<string, int> GetWordsCount()

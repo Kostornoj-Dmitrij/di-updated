@@ -14,7 +14,7 @@ public class CircularLayoutShould
     public void CircularLayout_ShouldThrowArgumentException_WhenAngleIncreasingStepIsZero()
     {
         var properties = new CircularLayoutProperties(angleIncreasingStep: 0);
-        
+
         var act = () => { _ = new CircularLayout(properties); };
 
         act.Should()
@@ -58,7 +58,7 @@ public class CircularLayoutShould
         var center = new Point(0, 0);
         var circularLayout = new CircularLayout(
             new CircularLayoutProperties(stepIncreasingAngle, radiusIncreasingStep));
-        
+
         var firstPoint = circularLayout.CalculateNextPoint();
         var secondPoint = circularLayout.CalculateNextPoint();
         var thirdPoint = circularLayout.CalculateNextPoint();

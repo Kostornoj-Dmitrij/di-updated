@@ -52,7 +52,8 @@ public class CircularCloudLayouterShould
     public void CircularCloudLayouter_ShouldNotPutIntersectedRectangles(int countRectangles, 
         int minSideLength, int maxSideLength)
     {
-        var rectangleSizes = GeometryCalculator.GenerateRectangleSizes(countRectangles, minSideLength, maxSideLength);
+        var rectangleSizes = GeometryCalculator
+                                    .GenerateRectangleSizes(countRectangles, minSideLength, maxSideLength);
 
         _rectangles.AddRange(rectangleSizes.Select(x => _cloudLayouter.PutNextRectangle(x)));
 
@@ -72,8 +73,9 @@ public class CircularCloudLayouterShould
     public void CircularCloudLayouter_ShouldPutRectanglesCloseToCircle(int countRectangles, int minSideLength, 
         int maxSideLength)
     {
-        var rectangleSizes = GeometryCalculator.GenerateRectangleSizes(countRectangles, minSideLength, maxSideLength);
-        
+        var rectangleSizes = GeometryCalculator
+                                    .GenerateRectangleSizes(countRectangles, minSideLength, maxSideLength);
+
         _rectangles.AddRange(rectangleSizes.Select(t => _cloudLayouter.PutNextRectangle(t)));
 
         var distances = _rectangles.Select(rectangle => 
