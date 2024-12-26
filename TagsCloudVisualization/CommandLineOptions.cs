@@ -5,10 +5,10 @@ namespace TagsCloudVisualization;
 
 public class CommandLineOptions
 {
-    [Option('t', "pathToText", Default = "Text.txt", HelpText = "Path to text for tags cloud")]
+    [Option('t', "pathToText", Default = "textForCloud.txt", HelpText = "Path to text for tags cloud")]
     public string? PathToText { get; set; }
 
-    [Option('s', "pathToSaveDirectory", Default = "Images", 
+    [Option('s', "pathToSaveDirectory", Default = "/Images", 
                                                             HelpText = "Where we will save images to")]
     public string? PathToSaveDirectory { get; set; }
 

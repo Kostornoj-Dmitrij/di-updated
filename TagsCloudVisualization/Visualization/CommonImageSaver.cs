@@ -15,15 +15,20 @@ public class CommonImageSaver : IImageSaver
 
     public void Save(Bitmap bitmap)
     {
-        var filePath = _properties.FilePath;
         var fileName = _properties.FileName;
+        var projectDirectory = Directory.GetParent(
+            Directory.GetParent(
+                Directory.GetParent(
+                    Directory.GetParent(
+                        AppDomain.CurrentDomain.BaseDirectory)!.FullName)!.FullName)!.FullName)!.FullName;
+        var relativePath = Path.Combine(projectDirectory, "Images");
         var imageFormat = GetImageFormat(_properties.FileFormat);
 
-        if (!Directory.Exists(_properties.FilePath))
+        if (!Directory.Exists(relativePath))
         {
-            Directory.CreateDirectory(_properties.FilePath);
+            Directory.CreateDirectory(relativePath);
         }
-        bitmap.Save(Path.Combine(filePath, $"{fileName}.{_properties.FileFormat}"), imageFormat);
+        bitmap.Save(Path.Combine(relativePath, $"{fileName}.{_properties.FileFormat}"), imageFormat);
     }
 
     private static ImageFormat GetImageFormat(string format)
