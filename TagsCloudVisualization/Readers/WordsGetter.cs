@@ -1,5 +1,3 @@
-using System.Text.RegularExpressions;
-
 namespace TagsCloudVisualization.Readers;
 
 public class WordsGetter
@@ -10,8 +8,9 @@ public class WordsGetter
 
         foreach (var paragraph in paragraphsOfText)
         {
-            var paragraphWords = Regex.Matches(paragraph, @"\b[a-zA-Zа-яА-Я]+\b")
-                .Select(word => word.Value);
+            var paragraphWords = paragraph
+                .Split(new[] { ' ', '\t', '\n', '\r', '.', ',', ';', ':', '!', '?', '"', '(', ')', '[', ']', '{', '}', '-', '/' }, StringSplitOptions.RemoveEmptyEntries)
+                .Select(word => word.Trim());
 
             words.AddRange(paragraphWords);
         }
