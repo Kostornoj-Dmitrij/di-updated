@@ -19,7 +19,7 @@ public class CircularLayoutShould
 
         act.Should()
             .Throw<ArgumentException>()
-            .WithMessage("AngleIncreasingStep should not be zero");
+            .WithMessage($"AngleIncreasingStep should not be zero. Provided value: 0");
     }
 
     [TestCase(0)]
@@ -32,7 +32,7 @@ public class CircularLayoutShould
 
         act.Should()
             .Throw<ArgumentException>()
-            .WithMessage("RadiusIncreasingStep should be positive");
+            .WithMessage($"RadiusIncreasingStep should be positive. Provided value: {radiusIncreasingStep}");
     }
 
     [TestCase(11)]

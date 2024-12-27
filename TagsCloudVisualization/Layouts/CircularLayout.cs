@@ -14,10 +14,10 @@ public class CircularLayout : ILayout
     public CircularLayout(CircularLayoutProperties properties)
     {
         if (properties.AngleIncreasingStep == 0)
-            throw new ArgumentException("AngleIncreasingStep should not be zero");
+            throw new ArgumentException($"AngleIncreasingStep should not be zero. Provided value: {properties.AngleIncreasingStep}");
 
         if (properties.RadiusIncreasingStep <= 0)
-            throw new ArgumentException("RadiusIncreasingStep should be positive");
+            throw new ArgumentException($"RadiusIncreasingStep should be positive. Provided value: {properties.RadiusIncreasingStep}");
 
         _center = new Point(0, 0);
         _radiusIncreasingStep = properties.RadiusIncreasingStep;
