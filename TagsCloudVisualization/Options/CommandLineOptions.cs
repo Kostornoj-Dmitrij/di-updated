@@ -1,7 +1,7 @@
 using CommandLine;
 using TagsCloudVisualization.Properties;
 
-namespace TagsCloudVisualization;
+namespace TagsCloudVisualization.Options;
 
 public class CommandLineOptions
 {
@@ -33,13 +33,6 @@ public class CommandLineOptions
     [Option("pathToBoringWords", Default = "BoringWords.txt", HelpText = "Path to boring words for skip")]
     public string? PathToBoringWords { get; set; }
 
-    [Option("angleIncreasingStep", Default = CircularLayoutProperties.OneDegree, 
-                                            HelpText = "Delta angle for the spiral")]
-    public double AngleIncreasingStep { get; set; }
-
-    [Option("radiusIncreasingStep", Default = 1, HelpText = "Delta radius for the spiral")]
-    public double RadiusIncreasingStep { get; set; }
-
     [Option("font", Default = "Times New Roman", HelpText = "Font of the words")]
     public string? Font { get; set; }
 
@@ -48,4 +41,6 @@ public class CommandLineOptions
 
     [Option("maxFontSize", Default = 50, HelpText = "Maximum word font size for word")]
     public int MaxFontSize { get; set; }
+
+    public SpiralLayoutOptions SpiralLayout { get; set; } = new SpiralLayoutOptions();
 }

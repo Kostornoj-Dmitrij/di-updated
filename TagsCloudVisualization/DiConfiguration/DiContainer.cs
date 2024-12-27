@@ -3,6 +3,7 @@ using TagsCloudVisualization.CloudLayouters;
 using TagsCloudVisualization.ColorGetter;
 using TagsCloudVisualization.Handlers;
 using TagsCloudVisualization.Layouts;
+using TagsCloudVisualization.Options;
 using TagsCloudVisualization.Properties;
 using TagsCloudVisualization.Readers;
 using TagsCloudVisualization.TagLayouters;
@@ -50,8 +51,8 @@ public class DiContainer
         ]);
 
         builder.RegisterType<CircularLayoutProperties>().WithParameters([
-            new NamedParameter("AngleIncreasingStep", options.AngleIncreasingStep),
-            new NamedParameter("RadiusIncreasingStep", options.RadiusIncreasingStep)
+            new NamedParameter("AngleIncreasingStep", options.SpiralLayout.AngleIncreasingStep),
+            new NamedParameter("RadiusIncreasingStep", options.SpiralLayout.RadiusIncreasingStep)
         ]);
 
         builder.RegisterType<TagLayouterProperties>().WithParameters([

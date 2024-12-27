@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using CommandLine;
 using TagsCloudVisualization.DiConfiguration;
+using TagsCloudVisualization.Options;
 using TagsCloudVisualization.Visualization;
 
 namespace TagsCloudVisualization;
