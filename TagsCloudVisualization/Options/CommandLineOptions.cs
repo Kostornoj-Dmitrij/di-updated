@@ -1,5 +1,4 @@
 using CommandLine;
-using TagsCloudVisualization.Properties;
 
 namespace TagsCloudVisualization.Options;
 
