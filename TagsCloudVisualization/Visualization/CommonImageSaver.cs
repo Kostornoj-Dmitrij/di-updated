@@ -35,10 +35,13 @@ public class CommonImageSaver : IImageSaver
     {
         try
         {
+            if (string.IsNullOrEmpty(format))
+                throw new ArgumentException("Format cannot be null or empty");
+
             var imageFormatConverter = new ImageFormatConverter();
             var imageFormat = imageFormatConverter.ConvertFromString(format);
 
-            if (imageFormat == null)
+            if (imageFormat is null)
                 throw new ArgumentException($"Can't handle format: {format}");
             return (ImageFormat)imageFormat;
         }
