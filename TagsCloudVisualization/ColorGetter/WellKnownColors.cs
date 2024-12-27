@@ -4,8 +4,6 @@ namespace TagsCloudVisualization.ColorGetter;
 
 public static class WellKnownColors
 {
-    private static readonly Random Random = new();
-
     public static readonly Dictionary<string, Color> Colors = new()
     {
         { "customRed", Color.FromArgb(200, 30, 30) },
@@ -20,8 +18,5 @@ public static class WellKnownColors
         { "customOrange", Color.FromArgb(255, 140, 0) },
         { "customPurple", Color.FromArgb(150, 0, 150) },
         { "customBrown", Color.FromArgb(150, 75, 0) },
-        { "random", Color.FromArgb(Random.Next(255), 
-            Random.Next(255), 
-            Random.Next(255)) },
     };
 }
