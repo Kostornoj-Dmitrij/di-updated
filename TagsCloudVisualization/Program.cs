@@ -9,7 +9,14 @@ public static class Program
 {
     public static void Main(string[] args)
     {
-        Parser.Default.ParseArguments<CommandLineOptions>(args).WithParsed(commandLineOptions =>
+        Parser.Default.ParseArguments<CommandLineOptions>(args)
+            .WithParsed(RunApplication)
+            .WithNotParsed(HandleErrors);
+    }
+
+    private static void RunApplication(CommandLineOptions commandLineOptions)
+    {
+        try
         {
             var container = DiContainer.Configure(commandLineOptions);
             var cloudMaker = container.Resolve<TagsCloudMaker>();
@@ -17,13 +24,20 @@ public static class Program
             var imageSaver = container.Resolve<IImageSaver>();
 
             imageSaver.Save(image);
-        }).WithNotParsed(errors =>
+        }
+        catch (Exception ex)
         {
-            foreach (var error in errors)
-            {
-                Console.WriteLine(error.ToString());
-            }
+            Console.WriteLine($"An error occurred: {ex.Message}");
             Environment.Exit(1);
-        });
+        }
+    }
+
+    private static void HandleErrors(IEnumerable<Error> errors)
+    {
+        foreach (var error in errors)
+        {
+            Console.WriteLine(error.ToString());
+        }
+        Environment.Exit(1);
     }
 }
